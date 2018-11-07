@@ -22,13 +22,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ require 'aliyun/nlp_api'
 
 #### create client
 
     $ client = Aliyun::NlpApi::Client.new(access_key_id,access_key_secret, endpoint)
 
 default endpoint: nlp.cn-shanghai.aliyuncs.com
+
+#### common API
+
+    $ body = {"lang"=>"ZH", "text"=>"Iphone专用数据线"}
+    $ client.common_api(body , api_path="/nlp/api/wordsegment/general")
+
+#### The specified API
+
+    $ body = {"lang"=>"ZH", "text"=>"Iphone专用数据线"}
+    $ client.wordsegment(body, domian="general")
+
 
 ## Development
 
